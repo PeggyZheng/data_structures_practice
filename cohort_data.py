@@ -58,9 +58,12 @@ def sort_by_cohort(filename):
             summer_15.append(student_name)
         elif cohort_data[4] == "Winter 2015":
             winter_15.append(student_name)
-        elif cohort_data[3] == "" and cohort_data[2] != '':
+        elif cohort_data[1] in ["Bryant", "Karl", "Lefevre", "Mahnken", "McClure", "Wiedl"]:
             tas.append(student_name)
-    all_students = sorted(winter_15) + sorted(spring_15) + sorted(summer_15) + sorted(tas)
+    all_students.append(winter_15)
+    all_students.append(spring_15)
+    all_students.append(summer_15)
+    all_students.append(tas)
 
     return all_students
 print sort_by_cohort("cohort_data.txt")
